@@ -23,29 +23,31 @@ control 'core-plans-readline' do
   '
   readline_pkg_ident = command("#{hab_path} pkg path #{plan_ident}")
   describe readline_pkg_ident do
-    its('exit_status') { should eq 0 }
     its('stdout') { should_not be_empty }
+    its('stderr') { should be_empty }
+    its('exit_status') { should eq 0 }
   end
   readline_pkg_ident = readline_pkg_ident.stdout.strip
 
   describe command("ls -al #{readline_pkg_ident}/lib/libreadline.so") do
-    its('exit_status') { should eq 0 }
     its('stdout') { should_not be_empty }
     its('stdout') { should match /#{readline_pkg_ident}/ }
     its('stderr') { should be_empty }
+    its('exit_status') { should eq 0 }
   end
 
   glibc = command("#{hab_path} pkg path core/glibc")
   describe glibc do
-    its('exit_status') { should eq 0 }
     its('stdout') { should_not be_empty }
+    its('stderr') { should be_empty }
+    its('exit_status') { should eq 0 }
   end
   glibc = glibc.stdout.strip
 
   describe command("#{glibc}/bin/ldd #{readline_pkg_ident}/lib/libreadline.so") do
-    its('exit_status') { should eq 0 }
     its('stdout') { should_not be_empty }
     its('stdout') { should match /ncurses/ }
     its('stderr') { should be_empty }
+    its('exit_status') { should eq 0 }
   end
 end
