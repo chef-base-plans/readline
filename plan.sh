@@ -1,7 +1,7 @@
 pkg_name=readline
 _distname="$pkg_name"
 pkg_origin=core
-_base_version=8.0
+_base_version=8.`
 pkg_version=${_base_version}
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="\
@@ -12,7 +12,7 @@ pkg_upstream_url="http://tiswww.case.edu/php/chet/readline/rltop.html"
 pkg_license=('GPL-3.0')
 _url_base="http://ftp.gnu.org/gnu/${_distname}"
 pkg_source="${_url_base}/${_distname}-${_base_version}.tar.gz"
-pkg_shasum="e339f51971478d369f8a053a330a190781acb9864cf4c541060f12078948e461"
+pkg_shasum="f8ceb4ee131e3232226a17f51b164afc46cd0b9e6cef344be87c65962cb82b02"
 pkg_dirname="${_distname}-${_base_version}"
 pkg_deps=(
   core/glibc
