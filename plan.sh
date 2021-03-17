@@ -1,7 +1,7 @@
 pkg_name=readline
 _distname="$pkg_name"
 pkg_origin=core
-_base_version=8.`
+_base_version=8.1
 pkg_version=${_base_version}
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="\
